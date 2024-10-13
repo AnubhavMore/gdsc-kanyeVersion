@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional To-Do List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <!-- To-Do List Container -->
+  <div class="max-w-2xl mx-auto my-10 p-6 bg-white rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold text-center text-gray-800">To-Do List</h1>
+
+    <!-- Task Input Section -->
+    <div class="task-input mt-6 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+      <input
+        type="text"
+        id="task"
+        class="flex-grow p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+        placeholder="Enter task..."
+      />
+      <input
+        type="number"
+        id="duration"
+        class="flex-grow p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+        placeholder="Duration (mins)"
+      />
+      <button
+        class="w-full sm:w-auto p-3 bg-green-500 text-white rounded hover:bg-green-600"
+        onclick="addTask()"
+      >Add Task</button>
+    </div>
+
+    <!-- Task List Section -->
+    <div class="task-list mt-8">
+      <h2 class="text-xl font-semibold text-center text-gray-700">Tasks</h2>
+      <ul id="tasks" class="mt-4 space-y-4"></ul>
+    </div>
+  </div>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>

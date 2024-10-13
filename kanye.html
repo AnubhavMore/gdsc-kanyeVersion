@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanye West Quotes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        #quoteBox {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quoteBox">
+        <h2>Kanye West Quote</h2>
+        <p id="quote">Click the button to get a quote!</p>
+        <button onclick="fetchQuote()">Get New Quote</button>
+    </div>
+
+    <script>
+        function fetchQuote() {
+            fetch('https://api.kanye.rest')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('quote').textContent = data.quote;
+                })
+                .catch(error => {
+                    document.getElementById('quote').textContent = 'Error fetching quote';
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+
+</body>
+</html>
